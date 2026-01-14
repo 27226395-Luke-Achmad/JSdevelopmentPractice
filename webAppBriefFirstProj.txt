@@ -1,0 +1,196 @@
+PROJECT: Personal Activity Tracker (Web App)
+
+TIME LIMIT
+Maximum 3 days (approximately 12–16 focused hours)
+
+STACK (MANDATORY)
+
+JavaScript (ES6+)
+
+React (functional components only)
+
+No backend
+
+No external state libraries
+
+LocalStorage only
+
+Minimal CSS (clarity over design)
+
+CORE OBJECTIVE
+Build a single-page React web app that allows a user to create activities, 
+track daily completions, and view summaries over time. The goal is to train 
+logic and state patterns that transfer directly to React Native.
+
+FUNCTIONAL REQUIREMENTS
+
+ACTIVITY MANAGEMENT
+
+User can add an activity
+
+Name (required)
+
+Category (optional)
+
+User can delete an activity
+
+Activities persist across reloads
+
+Constraints:
+
+Activity IDs must be generated in JavaScript
+
+Do not use array index as keys
+
+All inputs must be controlled components
+
+DAILY TRACKING
+
+User can mark an activity as completed for “today”
+
+Completion must be date-specific
+
+Prevent multiple completions for the same activity on the same date
+
+Constraint:
+
+Completion data must be stored in a structure that supports multiple 
+dates (not a boolean flag)
+
+SUMMARY VIEW
+
+Display total number of activities
+
+Display number completed today
+
+Display completion streak per activity (consecutive days)
+
+Constraint:
+
+Streaks must be computed dynamically, not stored
+
+PERSISTENCE
+
+All app data must persist using localStorage
+
+App must rehydrate state on initial load
+
+Constraint:
+
+No direct localStorage calls inside JSX
+
+TECHNICAL REQUIREMENTS (NON-NEGOTIABLE)
+
+STATE DESIGN
+
+Decide what state is global vs local
+
+Decide where side effects live
+
+Choose a data shape that allows future expansion
+
+You must be able to justify these decisions verbally
+
+REQUIRED REACT CONCEPTS
+
+useState
+
+useEffect
+
+Props drilling (no context)
+
+Conditional rendering
+
+List rendering with keys
+
+Controlled inputs
+
+DATA MODEL (EXAMPLE ONLY)
+activities =
+
+id (string)
+
+name (string)
+
+category (string or null)
+
+completions (array of date strings, e.g. YYYY-MM-DD)
+
+UI REQUIREMENTS
+
+At least 2 distinct views
+
+Main tracker view
+
+Summary view
+
+View switching must be state-based (no routing)
+
+Clear separation of components
+
+REQUIRED COMPONENTS
+
+App
+
+ActivityForm
+
+ActivityList
+
+ActivityItem
+
+SummaryView
+
+EXPLICITLY FORBIDDEN
+
+Following tutorials during implementation
+
+Copy-pasting app templates
+
+External UI libraries
+
+Redux, Zustand, Context
+
+Date libraries (use native Date only)
+
+OPTIONAL STRETCH GOALS (ONLY IF TIME REMAINS)
+
+Filter activities by category
+
+Edit activity names
+
+Visual completion indicators
+
+Undo delete
+
+DELIVERABLES BY END OF DAY 3
+
+Fully working application
+
+Clean component separation
+
+Readable, intentional state logic
+
+Commit history (local is sufficient)
+
+WHY THIS PROJECT TRANSFERS TO REACT NATIVE
+
+Trains state modeling used in mobile apps
+
+Enforces side-effect discipline
+
+Builds persistence logic independent of platform
+
+Reinforces component composition
+
+UI logic is reusable; only components change
+
+SELF-EVALUATION CHECKLIST
+You are not finished unless you can answer:
+
+Why is state shaped this way?
+
+What breaks if the app scales?
+
+Where would async APIs fit?
+
+Which components would become screens in React Native?
