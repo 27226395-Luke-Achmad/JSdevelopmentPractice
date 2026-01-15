@@ -4,7 +4,7 @@
 }
 
 .leftbar {
-  width: 200px;
+  width: 180px;
   background-color: #008afb;
   color: white;
   padding: 1rem;
@@ -16,5 +16,5 @@
   flex: 1;
    background-color: #003765;
     color: white;
-     width: 1400px;
+     width: 1335px;
 }

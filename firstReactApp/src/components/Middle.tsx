@@ -7,7 +7,7 @@ type MiddleProps = {
 
 function Middle({ text }: MiddleProps) {
   const day = [
-    ["mon", "mon", "mon"],
+    ["mon", "mon", "mon", "addon Mon"],
     ["tue", "tue", "tue"],
     ["wed", "wed", "wed"],
     ["thu", "thu", "thu"],
@@ -16,83 +16,46 @@ function Middle({ text }: MiddleProps) {
     ["sun", "sun", "sun"],
   ];
   let dayInt = -1;
+  let selectedDayTasks = [""];
 
   switch (text) {
     case "Monday":
       dayInt = 0;
+      selectedDayTasks = day[dayInt];
+      break;
     case "Tuesday":
       dayInt = 1;
+      selectedDayTasks = day[dayInt];
+      break;
     case "Wednesday":
       dayInt = 2;
+      selectedDayTasks = day[dayInt];
+      break;
     case "Thursday":
       dayInt = 3;
+      selectedDayTasks = day[dayInt];
+      break;
     case "Friday":
       dayInt = 4;
+      selectedDayTasks = day[dayInt];
+      break;
     case "Saturday":
       dayInt = 5;
+      selectedDayTasks = day[dayInt];
+      break;
     case "Sunday":
       dayInt = 6;
-    default:
-      dayInt = 0;
+      selectedDayTasks = day[dayInt];
+      break;
   }
-
-  day.map((day) => console.log(day[dayInt]));
 
   return (
     <aside className="middle">
-      <h2>Monday</h2> /* Change this so that it is dynamic to the day*/
-      <ul className="middle">
-        <li
-          className="list-day-tasks"
-          key={"task0"}
-          style={{
-            cursor: "pointer",
-            backgroundColor: " #003765",
-            color: "#ffffff",
-          }}
-        >
-          {" "}
-          day[dayInt][0]
-        </li>
-
-        <li
-          className="list-day-tasks"
-          key={"task2"}
-          style={{
-            cursor: "pointer",
-            backgroundColor: " #003765",
-            color: "#ffffff",
-          }}
-        >
-          {" "}
-          day[dayInt][1]
-        </li>
-
-        <li
-          className="list-day-tasks"
-          key={"task3"}
-          style={{
-            cursor: "pointer",
-            backgroundColor: " #003765",
-            color: "#ffffff",
-          }}
-        >
-          {" "}
-          day[dayInt][2]
-        </li>
-
-        <li
-          className="list-day-tasks"
-          key={"task4"}
-          style={{
-            cursor: "pointer",
-            backgroundColor: " #003765",
-            color: "#ffffff",
-          }}
-        >
-          {" "}
-          day[dayInt][3]
-        </li>
+      <h2>{text}</h2>
+      <ul>
+        {selectedDayTasks.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
       </ul>
     </aside>
   );
