@@ -1,9 +1,17 @@
-import SideBar from './SideBar';
-import MainArea from './SideBar';
-import InfoBar from './SideBar';
-
+import InfoBar from "./components/InfoBar";
+import LeftBar from "./components/LeftBar";
+import "bootstrap/dist/css/bootstrap.css";
+import { useState } from "react";
 
 function App() {
-  return <div><h1>I Am Unavailable</h1></div>
+  const [highlighted, setHighlighted] = useState("");
+
+  return (
+    <div className="app">
+      <LeftBar setHighlighted={setHighlighted} />
+      <InfoBar text={highlighted} />
+    </div>
+  );
 }
+
 export default App;
