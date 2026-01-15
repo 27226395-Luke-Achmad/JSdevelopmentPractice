@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.leftbar {
+  width: 200px;
+  background-color: #008afb;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.middle {
+  flex: 1;
+   background-color: #003765;
+    color: white;
+     width: 1400px;
+}

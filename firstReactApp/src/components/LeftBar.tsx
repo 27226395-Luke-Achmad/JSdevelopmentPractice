@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap/dist/css/bootstrap.css";
 import { useState } from "react";
 
 type SidebarProps = {
@@ -14,7 +14,7 @@ function LeftBar({ setHighlighted }: SidebarProps) {
     setHighlighted(day);
   };
   return (
-    <>
+    <aside className="leftbar">
       <h2>WeekDays</h2>
       <ul className="list-group">
         <li
@@ -23,8 +23,8 @@ function LeftBar({ setHighlighted }: SidebarProps) {
           onClick={() => handleClick("Monday")}
           style={{
             cursor: "pointer",
-            backgroundColor: selected !== "Monday" ? "white" : "transparent",
-            color: selected === "Monday" ? "green" : "inherit",
+            backgroundColor: selected !== "Monday" ? " #008afb" : "transparent",
+            color: selected === "Monday" ? "#00ff22" : "inherit",
             fontWeight: selected === "Monday" ? 700 : 400,
           }}
         >
@@ -38,8 +38,9 @@ function LeftBar({ setHighlighted }: SidebarProps) {
           onClick={() => handleClick("Tuesday")}
           style={{
             cursor: "pointer",
-            backgroundColor: selected !== "Tuesday" ? "white" : "transparent",
-            color: selected === "Tuesday" ? "green" : "inherit",
+            backgroundColor:
+              selected !== "Tuesday" ? " #008afb" : "transparent",
+            color: selected === "Tuesday" ? "#00ff22" : "inherit",
             fontWeight: selected === "Tuesday" ? 700 : 400,
           }}
         >
@@ -53,8 +54,9 @@ function LeftBar({ setHighlighted }: SidebarProps) {
           onClick={() => handleClick("Wednesday")}
           style={{
             cursor: "pointer",
-            backgroundColor: selected !== "Wednesday" ? "white" : "transparent",
-            color: selected === "Wednesday" ? "green" : "inherit",
+            backgroundColor:
+              selected !== "Wednesday" ? " #008afb" : "transparent",
+            color: selected === "Wednesday" ? "#00ff22" : "inherit",
             fontWeight: selected === "Wednesday" ? 700 : 400,
           }}
         >
@@ -68,8 +70,9 @@ function LeftBar({ setHighlighted }: SidebarProps) {
           onClick={() => handleClick("Thursday")}
           style={{
             cursor: "pointer",
-            backgroundColor: selected !== "Thursday" ? "white" : "transparent",
-            color: selected === "Thursday" ? "green" : "inherit",
+            backgroundColor:
+              selected !== "Thursday" ? " #008afb" : "transparent",
+            color: selected === "Thursday" ? "#00ff22" : "inherit",
             fontWeight: selected === "Thursday" ? 700 : 400,
           }}
         >
@@ -83,8 +86,8 @@ function LeftBar({ setHighlighted }: SidebarProps) {
           onClick={() => handleClick("Friday")}
           style={{
             cursor: "pointer",
-            backgroundColor: selected !== "Friday" ? "white" : "transparent",
-            color: selected === "Friday" ? "green" : "inherit",
+            backgroundColor: selected !== "Friday" ? " #008afb" : "transparent",
+            color: selected === "Friday" ? "#00ff22" : "inherit",
             fontWeight: selected === "Friday" ? 700 : 400,
           }}
         >
@@ -98,8 +101,9 @@ function LeftBar({ setHighlighted }: SidebarProps) {
           onClick={() => handleClick("Saturday")}
           style={{
             cursor: "pointer",
-            backgroundColor: selected !== "Saturday" ? "white" : "transparent",
-            color: selected === "Saturday" ? "green" : "inherit",
+            backgroundColor:
+              selected !== "Saturday" ? " #008afb" : "transparent",
+            color: selected === "Saturday" ? "#00ff22" : "inherit",
             fontWeight: selected === "Saturday" ? 700 : 400,
           }}
         >
@@ -113,8 +117,8 @@ function LeftBar({ setHighlighted }: SidebarProps) {
           onClick={() => handleClick("Sunday")}
           style={{
             cursor: "pointer",
-            backgroundColor: selected !== "Sunday" ? "white" : "transparent",
-            color: selected === "Sunday" ? "green" : "inherit",
+            backgroundColor: selected !== "Sunday" ? " #008afb" : "transparent",
+            color: selected === "Sunday" ? "#00ff22" : "inherit",
             fontWeight: selected === "Sunday" ? 700 : 400,
           }}
         >
@@ -122,7 +126,7 @@ function LeftBar({ setHighlighted }: SidebarProps) {
           Sunday
         </li>
       </ul>
-    </>
+    </aside>
   );
 }
 
