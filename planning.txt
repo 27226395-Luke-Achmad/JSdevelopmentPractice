@@ -1,0 +1,37 @@
+
+This file is nolongere in use for code but has important information in it
+
+reset execution policy: (in powershell)
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Restricted
+
+project name: firstReactApp
+package name: firstReactApp.json
+
+UI elements:
+    Main area for the planned activity name and check box.
+    Side bar showing the days of the week and which day it is currently.
+    Footer containing the details of the selected activity.
+
+Visual Element:
+    Main Area:
+        Sub Elements: 
+            Activity with checkbox
+    Sidebar:
+        Sub Elements:
+            Days of the week 
+            Reset Button
+    Footer:
+        Sub Elements:
+            Button for delete selected Activity
+            Button for add activity
+            Textbox for typing in activity
+            Textbox for displaying current activity selected
+                Textbox should change from display or write if 
+                the Add button has been pressed.
+
+Logical Elements: 
+    Activity bank indexed by day of the week.
+        day => Activity number => CheckBoxState
+            day => Index by name
+                Activity Number => index  by number to store info
+                    Activity number has an associated checkbox state
