@@ -2,59 +2,97 @@ import "bootstrap/dist/css/bootstrap.css";
 import { useState } from "react";
 
 type MiddleProps = {
-  text: string;
+  day: string;
+  setTaskSelected: (text: string) => void;
+  taskSelected: string;
+  userInput: string;
 };
 
-function Middle({ text }: MiddleProps) {
-  const day = [
-    ["mon", "mon", "mon", "addon Mon"],
-    ["tue", "tue", "tue"],
-    ["wed", "wed", "wed"],
-    ["thu", "thu", "thu"],
-    ["fri", "fri", "fri"],
-    ["sat", "sat", "sat"],
-    ["sun", "sun", "sun"],
+function Middle({
+  day,
+  userInput,
+  taskSelected,
+  setTaskSelected,
+}: MiddleProps) {
+  const dayList = [
+    ["m1", "m2", "m3", "addon for Mon"],
+    ["tu1", "tu2", "tu3"],
+    ["w1", "w2", "w3 "],
+    ["th1", "th2", "th3"],
+    ["f1", "f2", "f3"],
+    ["sa1", "sa2", "sa3"],
+    ["su1", "su2", "su3", "su4", "su5", "su6"],
   ];
+
   let dayInt = -1;
   let selectedDayTasks = [""];
+  let heading = "No Day Selected";
+  const [clickedTask, setClickedTask] = useState("");
 
-  switch (text) {
+  const handleClick = (task: string) => {
+    setClickedTask(task);
+    console.log(`${task} selected`);
+    setTaskSelected(task);
+    /*if (userInput.length > 0) {
+    dayList[dayInt][taskSelected];
+    }*/
+
+    //Finish adding the array elemnt switch, last tab in chat gpt has some tips
+  };
+  const allowed = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+
+  if (allowed.includes(day)) {
+    heading = "Tasks for\n" + day;
+  }
+  switch (day) {
     case "Monday":
       dayInt = 0;
-      selectedDayTasks = day[dayInt];
+      selectedDayTasks = dayList[dayInt];
       break;
     case "Tuesday":
       dayInt = 1;
-      selectedDayTasks = day[dayInt];
+      selectedDayTasks = dayList[dayInt];
       break;
     case "Wednesday":
       dayInt = 2;
-      selectedDayTasks = day[dayInt];
+      selectedDayTasks = dayList[dayInt];
       break;
     case "Thursday":
       dayInt = 3;
-      selectedDayTasks = day[dayInt];
+      selectedDayTasks = dayList[dayInt];
       break;
     case "Friday":
       dayInt = 4;
-      selectedDayTasks = day[dayInt];
+      selectedDayTasks = dayList[dayInt];
       break;
     case "Saturday":
       dayInt = 5;
-      selectedDayTasks = day[dayInt];
+      selectedDayTasks = dayList[dayInt];
       break;
     case "Sunday":
       dayInt = 6;
-      selectedDayTasks = day[dayInt];
+      selectedDayTasks = dayList[dayInt];
       break;
+    default:
+      selectedDayTasks = ["NO DAY SELECTED"];
   }
 
   return (
     <aside className="middle">
-      <h2>{text}</h2>
-      <ul>
-        {selectedDayTasks.map((item, index) => (
-          <li key={index}>{item}</li>
+      <ul className="task-list-group">
+        <h2>{heading}</h2>
+        {selectedDayTasks.map((item) => (
+          <li onClick={() => handleClick(item)} style={{ cursor: "pointer" }}>
+            {item}
+          </li>
         ))}
       </ul>
     </aside>
@@ -64,10 +102,7 @@ function Middle({ text }: MiddleProps) {
 export default Middle;
 
 /*
-The array storing the ToDo's will go here.
-
-I still need to separate the day task display from the 2d array 
-so I can display in the jsx concisely and with dynamic task count.
+Implement dynamic task count and user input for tasks.
 
 Add on-click behavior to trigger the textbox for editing of tasks.
 */

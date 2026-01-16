@@ -1,18 +1,20 @@
-import InfoBar from "./components/InfoBar";
 import LeftBar from "./components/LeftBar";
+import TxtBox from "./components/TxtBox";
 import Middle from "./components/Middle";
 import "bootstrap/dist/css/bootstrap.css";
 import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [highlighted, setHighlighted] = useState("");
+  const [taskRowSelected, setTaskRowSelected] = useState("");
+  const [daySelected, setDaySelected] = useState("");
+  const [userInput, setUserInput] = useState("");
 
   return (
     <div className="container">
-      <LeftBar setHighlighted={setHighlighted} />
-      <Middle text={highlighted} />
-      <InfoBar text={highlighted} />
+      <LeftBar setDay={setDaySelected} />
+      <Middle day={daySelected} taskSelected={taskRowSelected} userInput={userInput} setTaskSelected={setTaskRowSelected} />
+      <TxtBox task={taskRowSelected} setUserInput={setUserInput} />
     </div>
   );
 }

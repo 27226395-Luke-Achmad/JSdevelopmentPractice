@@ -2,17 +2,18 @@ import "bootstrap/dist/css/bootstrap.css";
 import { useState } from "react";
 
 type SidebarProps = {
-  setHighlighted: (text: string) => void;
+  setDay: (day: string) => void;
 };
 
-function LeftBar({ setHighlighted }: SidebarProps) {
-  const [selected, setSelected] = useState("");
+function LeftBar({ setDay }: SidebarProps) {
+  const [clickDay, setClickeday] = useState("");
 
   const handleClick = (day: string) => {
-    setSelected(day);
+    setClickeday(day);
     console.log(`${day} selected`);
-    setHighlighted(day);
+    setDay(day);
   };
+
   return (
     <aside className="leftbar">
       <h2>WeekDays</h2>
@@ -23,9 +24,9 @@ function LeftBar({ setHighlighted }: SidebarProps) {
           onClick={() => handleClick("Monday")}
           style={{
             cursor: "pointer",
-            backgroundColor: selected !== "Monday" ? " #008afb" : "transparent",
-            color: selected === "Monday" ? "#00ff22" : "inherit",
-            fontWeight: selected === "Monday" ? 700 : 400,
+            backgroundColor: clickDay !== "Monday" ? "Grey" : "inherit",
+            color: clickDay === "Monday" ? "silver" : "inherit",
+            fontWeight: clickDay === "Monday" ? 700 : 400,
           }}
         >
           {" "}
@@ -39,9 +40,9 @@ function LeftBar({ setHighlighted }: SidebarProps) {
           style={{
             cursor: "pointer",
             backgroundColor:
-              selected !== "Tuesday" ? " #008afb" : "transparent",
-            color: selected === "Tuesday" ? "#00ff22" : "inherit",
-            fontWeight: selected === "Tuesday" ? 700 : 400,
+              clickDay !== "Tuesday" ? "grey" : "inherit",
+            color: clickDay === "Tuesday" ? "silver" : "inherit",
+            fontWeight: clickDay === "Tuesday" ? 700 : 400,
           }}
         >
           {" "}
@@ -55,9 +56,9 @@ function LeftBar({ setHighlighted }: SidebarProps) {
           style={{
             cursor: "pointer",
             backgroundColor:
-              selected !== "Wednesday" ? " #008afb" : "transparent",
-            color: selected === "Wednesday" ? "#00ff22" : "inherit",
-            fontWeight: selected === "Wednesday" ? 700 : 400,
+              clickDay !== "Wednesday" ? "grey" : "inherit",
+            color: clickDay === "Wednesday" ? "silver" : "inherit",
+            fontWeight: clickDay === "Wednesday" ? 700 : 400,
           }}
         >
           {" "}
@@ -71,9 +72,9 @@ function LeftBar({ setHighlighted }: SidebarProps) {
           style={{
             cursor: "pointer",
             backgroundColor:
-              selected !== "Thursday" ? " #008afb" : "transparent",
-            color: selected === "Thursday" ? "#00ff22" : "inherit",
-            fontWeight: selected === "Thursday" ? 700 : 400,
+              clickDay !== "Thursday" ? "grey" : "inherit",
+            color: clickDay === "Thursday" ? "silver" : "inherit",
+            fontWeight: clickDay === "Thursday" ? 700 : 400,
           }}
         >
           {" "}
@@ -86,9 +87,9 @@ function LeftBar({ setHighlighted }: SidebarProps) {
           onClick={() => handleClick("Friday")}
           style={{
             cursor: "pointer",
-            backgroundColor: selected !== "Friday" ? " #008afb" : "transparent",
-            color: selected === "Friday" ? "#00ff22" : "inherit",
-            fontWeight: selected === "Friday" ? 700 : 400,
+            backgroundColor: clickDay !== "Friday" ? " grey" : "inherit",
+            color: clickDay === "Friday" ? "silver" : "inherit",
+            fontWeight: clickDay === "Friday" ? 700 : 400,
           }}
         >
           {" "}
@@ -102,9 +103,9 @@ function LeftBar({ setHighlighted }: SidebarProps) {
           style={{
             cursor: "pointer",
             backgroundColor:
-              selected !== "Saturday" ? " #008afb" : "transparent",
-            color: selected === "Saturday" ? "#00ff22" : "inherit",
-            fontWeight: selected === "Saturday" ? 700 : 400,
+              clickDay !== "Saturday" ? "grey" : "inherit",
+            color: clickDay === "Saturday" ? "silver" : "inherit",
+            fontWeight: clickDay === "Saturday" ? 700 : 400,
           }}
         >
           {" "}
@@ -117,9 +118,9 @@ function LeftBar({ setHighlighted }: SidebarProps) {
           onClick={() => handleClick("Sunday")}
           style={{
             cursor: "pointer",
-            backgroundColor: selected !== "Sunday" ? " #008afb" : "transparent",
-            color: selected === "Sunday" ? "#00ff22" : "inherit",
-            fontWeight: selected === "Sunday" ? 700 : 400,
+            backgroundColor: clickDay !== "Sunday" ? "grey" : "inherit",
+            color: clickDay === "Sunday" ? "silver" : "inherit",
+            fontWeight: clickDay === "Sunday" ? 700 : 400,
           }}
         >
           {" "}
