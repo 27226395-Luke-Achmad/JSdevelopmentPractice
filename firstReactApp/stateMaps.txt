@@ -1,0 +1,53 @@
+Core Components:
+    - Left Bar
+    - Middle Screen
+    - Text Box
+
+Responsibilities (static):
+    Left Bar: 
+        Store days
+        Clickable days
+
+    Middle Screen:
+        Store entire task array
+        Tasks Must be Clickable
+        Tasks Array must be mutable + appendable
+        Posses Heading
+        Remove duplicates before render
+
+    Textbox:
+        User input
+        Submit button
+
+Responsibilities (dynamic):
+    Left Bar:
+        clicked day as State(to app)
+        visual changes when clicked(internal state)
+
+    Middle Screen:
+        Accept day as state(from app) to show day's tasks
+        Select Task as State(to App)
+
+        Append and refresh list with textbox(user input) state (from app) with day(from app)
+        Deletion and refresh (internl state) with delete button(internal component)
+
+    Textbox: 
+        Recieve selected task state(from app) from Middle screen as heading
+        Send user input as state(to App)
+
+State flow list:
+App:
+    selected Day (state) Global
+    Selected Task (state) Global
+    userText (state) Global
+
+LeftBar:
+    Visual Changes when day is clicked (state) Internal
+
+Middle  Screen:
+    Deletion event and array refresh (state) Internal
+
+TextBox:
+    n/a
+
+

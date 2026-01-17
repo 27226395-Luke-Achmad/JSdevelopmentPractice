@@ -14,7 +14,7 @@
   flex-direction: column;
 }
 
-.middle {
+.taskarea {
   flex: 1;
   background-image: url('/textures/seamless_paper_texture.png');
   background-repeat: repeat;
@@ -34,4 +34,37 @@
   right: 0;
   padding: 20px;
   width: 1308px;
+}
+.addbutton {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-image: url('/textures/txtbox.png');
+  color: black;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 450px;
+  right: 1384px;
+}
+.deletebutton {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-image: url('/textures/txtbox.png');
+  color: black;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 500px;
+  right: 1375px;
+}
+
+.submit {
+  background-image: url('/textures/txtbox.png');
+  color: black;
+  border-radius: 5px;
+  cursor: pointer;
 }
